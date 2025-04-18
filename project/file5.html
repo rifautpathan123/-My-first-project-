@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Booking Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color:#3498db;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: pink;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .date-range {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .date-range div {
+            flex: 1;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .radio-option input, .checkbox-option input {
+            width: auto;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .booking-summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .booking-summary h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .price-info {
+            font-size: 14px;
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .required-field::after {
+            content: "*";
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+        
+        
+        
+        @media (max-width: 600px) {
+            .date-range {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .radio-group, .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paradise Beach Resort Booking</h1>
+        
+        <form action="booking-success.html" method="post">
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="full-name" class="required-field">Full Name</label>
+                <input type="text" id="full-name" name="full_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required-field">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="required-field">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <!-- Booking Details -->
+            <div class="form-group">
+                <label class="required-field">Booking Dates</label>
+                <div class="date-range">
+                    <div>
+                        <label for="check-in">Check-in Date</label>
+                        <input type="date" id="check-in" name="check_in" required>
+                    </div>
+                    <div>
+                        <label for="check-out">Check-out Date</label>
+                        <input type="date" id="check-out" name="check_out" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="guests" class="required-field">Number of Guests</label>
+                <select id="guests" name="guests" required>
+                    <option value="">Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="required-field">Room Type</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="standard" name="room_type" value="standard" required checked>
+                        <label for="standard">Standard Room (5000rs/night)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="deluxe" name="room_type" value="deluxe">
+                        <label for="deluxe">Deluxe Room (6000rs/night)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="suite" name="room_type" value="suite">
+                        <label for="suite">Suite (3000rs/night)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="villa" name="room_type" value="villa">
+                        <label for="villa">Private Villa (10000rs/night)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Add-on Services</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="breakfast" name="addons[]" value="breakfast">
+                        <label for="breakfast">Daily Breakfast (2500rs/day)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="spa" name="addons[]" value="spa">
+                        <label for="spa">Spa Package (2000rs)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="airport" name="addons[]" value="airport">
+                        <label for="airport">Airport Transfer (5000rs)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="tour" name="addons[]" value="tour">
+                        <label for="tour">Island Tour (8500rs)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="special-requests">Special Requests</label>
+                <textarea id="special-requests" name="special_requests" rows="4" placeholder="Let us know if you have any special requirements or preferences"></textarea>
+            </div>
+            
+            <div class="booking-summary">
+                <h3>Room Rates & Information</h3>
+                <div class="price-info">
+                    <p>Room rates are per night and do not include 12% tax.</p>
+                    <p>Check-in time is 3:00 PM and check-out time is 11:00 AM.</p>
+                    <p>A valid credit card will be required at check-in for incidental charges.</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="payment-method" class="required-field">Payment Method</label>
+                <select id="payment-method" name="payment_method" required>
+                    <option value="">Select payment method</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank">Bank Transfer</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="required-field">I agree to the terms and conditions</label>
+                </div>
+            </div>
+            
+            <button type="submit">submit</button>
+            
+            
+        </form>
+    </div>
+</body>
+</html>

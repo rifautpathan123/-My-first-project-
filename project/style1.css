@@ -1,0 +1,118 @@
+body{
+    background-color: aqua;
+}
+/* Main container for all resort cards */
+.resort-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Individual resort card */
+  .resort-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+  }
+  
+  .resort-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Resort image container */
+  .resort-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .resort-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .resort-card:hover .resort-image img {
+    transform: scale(1.05);
+  }
+  
+  /* Resort details */
+  .resort-details {
+    padding: 15px;
+  }
+  
+  .resort-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .resort-location {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .resort-location i {
+    margin-right: 5px;
+    color: #4a89dc;
+  }
+  
+  .resort-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  
+  /* Resort price and button area */
+  .resort-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 15px;
+  }
+  
+  .resort-price {
+    font-weight: bold;
+    color: #2ecc71;
+    font-size: 16px;
+  }
+  
+  .view-details-btn {
+    padding: 8px 12px;
+    background-color: #4a89dc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #3a70b5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .resort-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .resort-container {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details of room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .navbar{
+        background-color: #333;
+        overflow: hidden;
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+    .navbar ul{
+        list-style-type: none;
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+    }
+    .navbar li{
+        flex:1;
+    }
+    .navbar a{
+        display: block;
+        color:white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+
+    }
+    .nanbar a:hover{
+        background-color: #575757;
+    }
+    
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .room-image {
+            width:auto;
+            height: auto;
+            background-color: #ddd;
+            background-image: url('/api/placeholder/800/600');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .rating {
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .amenities {
+            margin-bottom: 20px;
+        }
+        
+        .amenities ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .amenities li {
+            padding: 5px;
+        }
+        
+        .amenities li:before {
+            content: "✓";
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+        
+        .reviews {
+            margin-bottom: 20px;
+        }
+        
+        .review {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        
+        .booking {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 768px) {
+            .amenities ul {
+                grid-template-columns: 1fr;
+            }
+        }
+        header,footer{
+        background-color: #009688;
+        color:white;
+        text-align: center;
+        padding: 10px 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    footer{
+        margin-top:30px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Areas</a></li>
+            <li><a href="#">Best offers</a></li>
+            <li><a href="#">Servises</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+    <header> <h1> welcome to our detailpage</h1></header>
+    <header><h1>Reviews and about resort</h1></header>
+    <div class="container">
+        <h1>Deluxe Room with Ocean View</h1>
+        
+        <div class="room-image">
+            <img src="room.jpeg" alt="room" src="food.jpeg" alt="food">
+            
+        </div>
+        
+        <div class="rating">
+            ★★★★★ <span>(48 reviews)</span>
+        </div>
+        
+        <div class="price">
+            ₹5,999 per night
+        </div>
+        
+        <div class="description">
+            <p>Experience luxury and comfort in our spacious Deluxe Room. This room features a king-sized bed, private balcony with ocean view, and modern amenities to make your stay enjoyable.</p>
+        </div>
+        
+        <div class="amenities">
+            <h2>Room Amenities</h2>
+            <ul>
+                <li>King-sized bed</li>
+                <li>Ocean view</li>
+                <li>Air conditioning</li>
+                <li>Free Wi-Fi</li>
+                <li>42" TV</li>
+                <li>Mini refrigerator</li>
+            </ul>
+        </div>
+        
+        <div class="reviews">
+            <h2>Guest Reviews</h2>
+            <div class="review">
+                <div>★★★★★</div>
+                <div><strong>Rahul S.</strong> - March 2025</div>
+                <p>Beautiful room with amazing views! The bed was very comfortable and the service was excellent.</p>
+            </div>
+            <div class="review">
+                <div>★★★★☆</div>
+                <div><strong>Priya M.</strong> - February 2025</div>
+                <p>Great location and nice room. The only issue was some noise from the hallway.</p>
+            </div>
+        </div>
+        
+        <div class="booking">
+            <h2>Book This Room</h2>
+            <div class="booking-form">
+                <div>
+                    <label for="checkin">Check-in:</label>
+                    <input type="date" id="checkin">
+                </div>
+                <div>
+                    <label for="checkout">Check-out:</label>
+                    <input type="date" id="checkout">
+                </div>
+                <div>
+                    <label for="guests">Guests:</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                    </select>
+                </div>
+       <a href="file4.html"><button id="bookBtn">THE IMAGES OF services</button></a>
+            </div>
+            <div id="totalPrice" style="margin-top: 15px; display: none;"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy;2025 Resort Explorer| contact us:info@resort.com</p>
+    </footer>
+    </body>
+    </html>
+       
